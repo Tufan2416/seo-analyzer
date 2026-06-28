@@ -1,110 +1,274 @@
-# 🚀 SEO Analyzer
+# SEO Analyzer
 
-An AI-powered SEO auditing platform that analyzes websites and generates comprehensive SEO reports with actionable recommendations. Built with **FastAPI**, **React (Vite)**, **Docker**, and deployed using **Railway** and **Vercel**.
+A full-stack SEO Analyzer inspired by Woorank that performs comprehensive website SEO audits using custom-built logic, manual crawling, and open-source libraries.
 
-## 🌐 Live Demo
+> No Woorank APIs or paid SEO APIs are used.
+
+---
+
+## Live Demo
 
 **Frontend:** https://seo-analyzer-olive.vercel.app
 
-**Backend API:** https://seo-analyzer-production-5591.up.railway.app
+**Backend API (Swagger):**
+https://seo-analyzer-production-5591.up.railway.app/docs
 
-**API Documentation:** https://seo-analyzer-production-5591.up.railway.app/docs
-
----
-
-## 📌 Features
-
-### On-Page SEO
-- ✅ Title Tag Analysis
-- ✅ Meta Description Analysis
-- ✅ Heading Structure (H1-H6)
-- ✅ Content Quality Analysis
-- ✅ Keyword Occurrence Analysis
-
-### Technical SEO
-- ✅ HTTPS Detection
-- ✅ Robots.txt Detection
-- ✅ Sitemap.xml Detection
-- ✅ Canonical Tag Detection
-- ✅ Mobile Friendly Check
-- ✅ Redirect Detection
-
-### Media Analysis
-- ✅ Image Count
-- ✅ Missing ALT Attributes
-
-### Link Analysis
-- ✅ Internal Links
-- ✅ External Links
-- ✅ Total Links
-
-### Performance Analysis
-- ✅ Response Time
-- ✅ Page Size
-- ✅ HTTP Status Code
-
-### Social SEO
-- ✅ Open Graph Tags
-- ✅ Twitter Card Detection
-
-### Advanced SEO
-- ✅ Structured Data Detection
-- ✅ Security Analysis
-- ✅ Indexability Analysis
-- ✅ Core Web Vitals (Basic Analysis)
-
-### SEO Scoring
-- ✅ Technical Score
-- ✅ Performance Score
-- ✅ Content Score
-- ✅ Social Score
-- ✅ Overall SEO Score
+**GitHub Repository:**
+https://github.com/Tufan2416/seo-analyzer
 
 ---
 
-## 🛠 Tech Stack
+# Project Overview
 
-### Frontend
-- React.js
+The SEO Analyzer evaluates websites by crawling their pages and generating a detailed SEO report.
+
+The project was developed to replicate the core functionality of Woorank using:
+
+- Custom crawling
+- Open-source libraries
+- FastAPI backend
+- React frontend
+
+No paid SEO services or Woorank APIs are used.
+
+---
+
+# Features
+
+## On-Page SEO Analysis
+
+- Meta Title Analysis
+- Meta Description Analysis
+- Heading Structure (H1-H6)
+- Multiple H1 Detection
+- Image ALT Tag Analysis
+- URL Structure Analysis
+- Content Analysis
+- Keyword Detection
+- Content Length Analysis
+
+---
+
+## Technical SEO
+
+- HTTPS Detection
+- robots.txt Detection
+- sitemap.xml Detection
+- Mobile Friendly Detection
+- Canonical Tag Detection
+- Redirect Handling
+- Indexability Analysis
+
+---
+
+## Link Analysis
+
+- Internal Links Count
+- External Links Count
+- Total Links
+
+---
+
+## Performance Analysis
+
+- Response Time
+- Page Size
+- HTTP Status Code
+
+---
+
+## Social SEO
+
+- Open Graph Tags
+- Twitter Cards
+- Social Metadata Detection
+
+---
+
+## Security Analysis
+
+- HTTPS Validation
+- SSL Availability
+
+---
+
+## Structured Data
+
+- JSON-LD Detection
+- Schema.org Detection
+
+---
+
+## SEO Recommendations
+
+The analyzer automatically generates recommendations such as:
+
+- Improve Meta Title
+- Improve Meta Description
+- Add Missing ALT Tags
+- Use Single H1
+- Improve Mobile Friendliness
+- Add Sitemap
+- Improve Social Metadata
+
+---
+
+# SEO Score System
+
+The application generates an overall SEO score out of 100.
+
+The score is calculated from multiple categories:
+
+| Category | Weight |
+|----------|----------|
+| Technical SEO | 25% |
+| Performance | 25% |
+| Content Quality | 25% |
+| Social SEO | 25% |
+
+Each category evaluates multiple SEO factors and contributes equally to the final score.
+
+The scoring system is custom-built and does not rely on external SEO scoring services.
+
+---
+
+# Backend Architecture
+
+```
+Frontend (React)
+
+        │
+
+        ▼
+
+FastAPI REST API
+
+        │
+
+        ▼
+
+Crawler
+
+        │
+
+        ▼
+
+SEO Analyzer Modules
+
+├── Meta Analyzer
+├── Heading Analyzer
+├── Image Analyzer
+├── URL Analyzer
+├── Link Analyzer
+├── Technical Analyzer
+├── Content Analyzer
+├── Performance Analyzer
+├── Social Analyzer
+├── Indexability Analyzer
+├── Security Analyzer
+├── Structured Data Analyzer
+└── Core Web Vitals Analyzer
+
+        │
+
+        ▼
+
+SEO Score Engine
+
+        │
+
+        ▼
+
+JSON Report
+```
+
+---
+
+# API Endpoints
+
+## POST
+
+```
+POST /api/analyze
+```
+
+Starts a new SEO analysis.
+
+Example
+
+```json
+{
+    "url":"https://github.com"
+}
+```
+
+Returns
+
+```json
+{
+    "job_id":"xxxx",
+    "status":"processing"
+}
+```
+
+---
+
+## GET
+
+```
+GET /api/results/{job_id}
+```
+
+Returns the SEO report.
+
+---
+
+# Technology Stack
+
+## Frontend
+
+- React
 - Vite
-- Tailwind CSS
 - Axios
 
-### Backend
+## Backend
+
 - FastAPI
 - BeautifulSoup4
 - Requests
-- lxml
 - Uvicorn
 
-### Deployment
-- Railway (Backend)
-- Vercel (Frontend)
-- Docker
-- GitHub
+## Deployment
+
+Frontend
+
+- Vercel
+
+Backend
+
+- Railway
 
 ---
 
-## 📂 Project Structure
+# Project Structure
 
 ```
 seo-analyzer/
-│
+
 ├── backend/
 │   ├── app/
 │   │   ├── analyzers/
 │   │   ├── crawler/
 │   │   ├── api/
+│   │   ├── services/
 │   │   ├── scoring/
-│   │   └── services/
-│   ├── Dockerfile
+│   │   └── utils/
+│   ├── main.py
 │   └── requirements.txt
 │
 ├── frontend/
 │   ├── src/
-│   │   ├── api/
-│   │   ├── components/
-│   │   └── assets/
+│   ├── public/
 │   └── package.json
 │
 └── docker-compose.yml
@@ -112,31 +276,19 @@ seo-analyzer/
 
 ---
 
-## ⚙️ Installation
+# Installation
 
-### Clone Repository
-
-```bash
-git clone https://github.com/Tufan2416/seo-analyzer.git
-cd seo-analyzer
-```
-
-### Backend
+## Backend
 
 ```bash
 cd backend
 
-python -m venv venv
-
-# Windows
-venv\Scripts\activate
-
 pip install -r requirements.txt
 
-uvicorn app.main:app --reload
+uvicorn main:app --reload
 ```
 
-Backend runs at:
+Backend runs on
 
 ```
 http://localhost:8000
@@ -144,7 +296,7 @@ http://localhost:8000
 
 ---
 
-### Frontend
+## Frontend
 
 ```bash
 cd frontend
@@ -154,7 +306,7 @@ npm install
 npm run dev
 ```
 
-Frontend runs at:
+Frontend runs on
 
 ```
 http://localhost:5173
@@ -162,55 +314,76 @@ http://localhost:5173
 
 ---
 
-## 🐳 Docker
+# Deployment
 
-```bash
-docker compose up --build
-```
+## Backend
 
----
+Railway
 
-## 📈 Sample Report Includes
+## Frontend
 
-- Overall SEO Score
-- Meta Analysis
-- Heading Analysis
-- Image SEO
-- Technical SEO
-- Performance Metrics
-- Social SEO
-- Link Analysis
-- Content Analysis
-- Security Analysis
-- Indexability
-- Structured Data
-- Recommendations
+Vercel
 
 ---
 
-## 🎯 Future Improvements
+# Project Requirements Coverage
 
-- Google PageSpeed Insights API Integration
-- Lighthouse Integration
-- PDF Report Generation
-- Website Audit History
-- User Authentication
+| Requirement | Status |
+|-------------|--------|
+| Meta Analysis | ✅ |
+| Heading Analysis | ✅ |
+| Image ALT Analysis | ✅ |
+| URL Analysis | ✅ |
+| Internal Links | ✅ |
+| External Links | ✅ |
+| HTTPS Check | ✅ |
+| robots.txt | ✅ |
+| sitemap.xml | ✅ |
+| Mobile Friendly | ✅ |
+| Canonical Tag | ✅ |
+| Redirect Handling | ✅ |
+| Indexability | ✅ |
+| Structured Data | ✅ |
+| Performance Metrics | ✅ |
+| Content Analysis | ✅ |
+| Keyword Detection | ✅ |
+| Readability | ✅ |
+| Open Graph | ✅ |
+| Twitter Cards | ✅ |
+| SEO Score | ✅ |
+| FastAPI API | ✅ |
+| React Frontend | ✅ |
+| Railway Deployment | ✅ |
+| Vercel Deployment | ✅ |
+
+---
+
+# Future Improvements
+
+- Google Lighthouse Integration
+- Real Core Web Vitals API
+- PDF Report Export
 - Scheduled SEO Monitoring
-- Competitor Analysis
-- AI-Powered SEO Recommendations
+- Historical SEO Reports
+- Multi-page Crawling
+- Competitor SEO Comparison
 
 ---
 
-## 👨‍💻 Author
+# Author
 
 **Tufan Chowdhury**
 
-GitHub: https://github.com/Tufan2416
+B.Tech Computer Science Engineering
 
-LinkedIn: https://www.linkedin.com/in/tufan-chowdhury06/
+GitHub:
+https://github.com/Tufan2416
+
+LinkedIn:
+https://www.linkedin.com/in/tufan-chowdhury06/
 
 ---
 
-## 📄 License
+# License
 
-This project is developed for educational purposes and technical assessment.
+This project was developed for educational and project submission purposes.
