@@ -5,7 +5,7 @@
 ![React](https://img.shields.io/badge/React-19-blue?logo=react)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.116-green?logo=fastapi)
 ![Python](https://img.shields.io/badge/Python-3.12-yellow?logo=python)
-![Vercel](https://img.shields.io/badge/Frontend-Vercel-black?logo=vercel)
+![Vercel](https://img.shields.io/badge/Frontend-Vercel-green?logo=vercel)
 ![Railway](https://img.shields.io/badge/Backend-Railway-purple?logo=railway)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
