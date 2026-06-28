@@ -27,7 +27,20 @@ function App() {
 
     } catch (err) {
       console.error(err);
-      alert("Backend connection failed");
+
+      if (err.response) {
+        console.error("Status:", err.response.status);
+        console.error("Data:", err.response.data);
+
+        alert(
+          err.response.data?.detail ||
+          `Server Error (${err.response.status})`
+        );
+      } else if (err.request) {
+        alert("Backend is not responding. Please try again in a few seconds.");
+      } else {
+        alert(err.message);
+      }
     }
 
   };
