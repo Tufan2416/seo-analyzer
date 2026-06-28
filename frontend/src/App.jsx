@@ -21,10 +21,27 @@ function App() {
 
       const jobId = response.data.job_id;
 
-      const result = await api.get(`/results/${jobId}`);
+      let result = null;
+
+      for (let i = 0; i < 20; i++) {
+        try {
+          const res = await api.get(`/results/${jobId}`);
+
+          if (res.data.status === "completed") {
+            result = res;
+            break;
+          }
+        } catch (e) {}
+
+        await new Promise(resolve => setTimeout(resolve, 1000));
+      }
+
+      if (!result) {
+        alert("Analysis is taking longer than expected. Please try again.");
+        return;
+      }
 
       setReport(result.data);
-
     } catch (err) {
       console.error(err);
 
