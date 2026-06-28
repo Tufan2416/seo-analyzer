@@ -4,7 +4,7 @@ export default function CoreWebVitalsCard({ report }) {
 
     if (!cwv) {
         return (
-            <div className="bg-slate-800 rounded-xl p-6 shadow-lg">
+            <div className="bg-slate-800 rounded-xl p-6 shadow-lg w-full overflow-hidden">
                 <h2 className="text-xl font-bold mb-4">
                     Core Web Vitals
                 </h2>
@@ -15,7 +15,7 @@ export default function CoreWebVitalsCard({ report }) {
 
     return (
 
-        <div className="bg-slate-800 rounded-xl p-6 shadow-lg">
+        <div className="bg-slate-800 rounded-xl p-6 shadow-lg w-full overflow-hidden">
 
             <h2 className="text-xl font-bold mb-4">
                 Core Web Vitals

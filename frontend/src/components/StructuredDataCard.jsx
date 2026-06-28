@@ -6,7 +6,7 @@ export default function StructuredDataCard({ report }) {
 
     return (
 
-        <div className="bg-slate-800 rounded-xl p-6 shadow-lg">
+        <div className="bg-slate-800 rounded-xl p-6 shadow-lg w-full overflow-hidden">
 
             <h2 className="text-xl font-bold mb-4">
                 Structured Data
