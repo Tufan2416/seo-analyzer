@@ -18,13 +18,13 @@
 ## 🌐 Live Demo
 
 **Frontend:**  
-https://YOUR-VERCEL-URL.vercel.app
+https://seo-analyzer-olive.vercel.app/
 
 **Backend API:**  
-https://YOUR-RAILWAY-URL.up.railway.app
+https://seo-analyzer-production-5591.up.railway.app
 
 **Swagger API Documentation:**  
-https://YOUR-RAILWAY-URL.up.railway.app/docs
+https://seo-analyzer-production-5591.up.railway.app/docs
 
 ---
 
